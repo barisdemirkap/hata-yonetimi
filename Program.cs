@@ -27,7 +27,7 @@ namespace hata_yonetimi
             try 
             {
                 int a = int.Parse(null) ;
-                int b = int.Parse("test") ;
+            
             }
             catch(ArgumentNullException ex)
             {
@@ -40,9 +40,25 @@ namespace hata_yonetimi
             }
             catch(FormatException ex)
             {
-                Console.WriteLine("Ver' tipi uygun degil") ;
+                Console.WriteLine("Veri tipi uygun degil") ;
                 Console.WriteLine(ex) ;
             }
+            try
+            {
+                   int c = int.Parse("-20000000000") ;
+
+            }
+             catch(OverflowException ex)
+            {
+                Console.WriteLine("Cok kucuk ya da cok buyuk bir deger giridiniz.") ;
+                Console.WriteLine(ex) ;
+            }
+            finally 
+            {
+                Console.WriteLine("islem basari ile tamamlandi");
+            }
+
+
 
 
         }
